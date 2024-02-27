@@ -12,10 +12,9 @@ def index():
 @app.route('/controller', methods=['POST'])
 def controller():
     if request.method == 'POST':
-        print(request.form)
         with open("move.json", "w") as outfile:
             json.dump(request.form, outfile)
-        return('Posted New Movement!',204)
+        return 'Posted New Movement!', 204
 
 @app.route('/nextmove', methods=['GET'])
 def nextmove():
