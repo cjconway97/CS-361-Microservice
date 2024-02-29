@@ -1,6 +1,8 @@
-import requests, time
+import json, time
 
 while True:
-    move = requests.get('http://localhost:5001/nextmove')
-    print(move.text)
-    time.sleep(0.25)
+    f = open('move.json')
+    move = json.load(f)
+    print(move)
+    time.sleep(1/60)
+    f.close()
